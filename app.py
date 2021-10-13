@@ -1,10 +1,8 @@
-from ctypes import alignment
-from os import write
-from re import template
+
 import streamlit as st
-import plotly.graph_objs as go
 from preparedata import loadData
 import plotly.express as px
+
 
 df = loadData('most_followed_ig.csv')
 sidebar= st.sidebar
@@ -62,7 +60,7 @@ def analyseData():
     df['FOLLOWERS']= df['FOLLOWERS'].apply(lambda a: float(a.split('M')[0]))
     df['FOLLOWERS'].head()
     st.subheader('ANALYSES BY FOLLOWERS')
-    st.plotly_chart((px.bar(data_frame = df, y='FOLLOWERS', x='BRAND',   color='RANK')))
+    st.plotly_chart((px.bar(data_frame = df, y='FOLLOWERS', x='BRAND',   color='RANK',template='plotly_white')))
     
     
 
