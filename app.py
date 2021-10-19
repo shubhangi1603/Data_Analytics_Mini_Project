@@ -3,8 +3,6 @@ from preparedata import loadData
 import plotly.express as px
 
 df = loadData('most_followed_ig.csv')
-
-
 sidebar= st.sidebar
 st.sidebar.image('insta.gif')
 sidebar.header('Choose your option')
